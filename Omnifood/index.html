@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en";>
+    <head>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- it tells mobile phones that they should not zoom out of the page and strt with scale 1 -->
+           <!-- this meta tag is required for responsive design -->
+         <link rel="stylesheet" type="text/css" href="D:\Udemy\html and css\Omnifood\vendors\normalise.css">
+         <link rel="stylesheet" type="text/css" href="D:\Udemy\html and css\Omnifood\resources\css\style.css">
+         <link rel="stylesheet" type="text/css" href="D:\Udemy\html and css\Omnifood\vendors\grid.css"> <!-- using grid we size everything in relative manner.Using this everything is sized in columns and there is equal spacing btw each column on resizing the page this is useful for responsiveness -->
+         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css"><!-- for using icons -->
+         <link rel="stylesheet" type="text/css" href="vendors/css/animate.css"><!-- for using animation -->
+         <link rel="stylesheet" type="text/css" href="D:\Udemy\html and css\Omnifood\resources\css\queries.css">
+         
+         <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+         
+         <title>Omnifood</title>
+
+    </head>
+    <body>
+        <header> <!-- here we put the logo, images it works like a div only that means its a container -->
+             <nav>
+                 <div class="row"> <!-- as we want the navigation bar shown as a row so thats y we have passed row here -->
+                     <img src="D:\Udemy\html and css\Omnifood\resources\image\logo-white.png" alt="Omnifood Logo" class="logo">
+                     <img src="D:\Udemy\html and css\Omnifood\resources\image\logo.png" alt="Omnifood Logo" class="logo-black">
+                     <!-- this is the sticky logo -->
+                 
+                   <ul class="main-nav"><!-- This is a unordred list -->
+                       <li><a href="#features">Food delivery</a></li>
+                       <!-- here we use #features,works,cities,plans to define anchors,
+                    and mention the id names as same as done below -->
+                       <li><a href="#works">How it works</a></li>
+                       <li><a href="#cities">Our Cities</a></li>
+                       <li><a href="#plans">Sign Up</a></li>
+                   </ul>   
+
+                 </div>
+
+             </nav> 
+                
+                
+               <div class="hero-text-box"><!-- this is the text box which floats on the background hero image  -->
+                    <h1>Goodbye junk food.<br> Hello super healthy meals.</h1> 
+                    <a class="btn btn-full js--scroll-to-plans" href="#">I’m hungry</a> <!-- for dummy link we put # -->
+                    <!-- here we have 2 class names for each button so that we can put the common things in button class and individiual changes in button ghost and full respectively -->
+                    <a class="btn btn-ghost js--scroll-to-start" href="#">Show me more </a>  
+                   <!--  this js class is for javascript for scrolling  -->   
+                </div> 
+
+
+        </header>
+
+ <!-- section 2 starts here -->       
+
+        <section class="section-features js--section-features" id="features"><!-- this id works as an anchor and on clicking features in nav it takes us to this section -->
+            <div class="row"> <!-- this class = row is used as we want this to be centred -->
+                
+                <!-- Each webpage should have only 1 H1 element that means only 1 main heading as that is already used so we use H2 -->
+                <h2>Get food fast &mdash; not fast food.</h2> <!-- This mdash is a html entity and increases the size of the dash -->
+                <p class="long-copy">
+                    Hello, we’re Omnifood, your new premium food delivery service. We know you’re always busy. No time for cooking. So let us take care of that, we’re really good at it, we promise!
+                </p>
+            </div>
+ <!-- To use the grid from here -->
+            <div class="row js--wp-1" id="abc"> <!-- we have given id here, check css file for explaination -->
+                <!-- this wp-1 is the 1st waypoint to add animation-->
+                <div class="col box"> <!-- this col is used to divide the text in columns -->
+                    <i class="ion-ios-infinite-outline icon-big"></i>
+                    <h3>Up to 365 days/year</h3> <!-- As h1 and h2 r already used for title so cant use that -->
+                    <p>Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can also choose to order more flexibly if that's your style.</p>
+                </div>
+
+                <div class="col box"> 
+                    <i class="ion-ios-stopwatch-outline icon-big"></i>
+                    <h3>Ready in 20 minutes</h3> 
+                    <p>You're only twenty minutes away from your delicious and super healthy meals delivered right to your home. We work with the best chefs in each town to ensure that you're 100% happy.</p>
+                </div>
+
+                <div class="col box"> 
+                    <i class="ion-ios-nutrition-outline icon-big"></i>
+                    <h3>100% organic</h3> 
+                    <p>Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can also choose to order more flexibly if that's your style</p>
+                </div>
+
+                <div class="col box"> 
+                    <i class="ion-ios-cart-outline icon-big"></i>     
+                    <h3>Order anything</h3> 
+                    <p>We don't limit your creativity, which means you can order whatever you feel like. You can also choose from our menu containing over 100 delicious meals. It's up to you </p>
+                </div>
+            </div>
+        </section>
+
+<!-- section 3 starts -->
+        <section class="section-meals">
+            <!-- here we have not used row as in section 2 as we want this to occupy full desktp screen -->        
+            <ul class="meal-showcase clearfix"><!--  this clearfix is used in here coz its child li has float used
+                and this section is overlapping with another section. 
+            so use clearfix while using float property-->
+                <li>
+                    <figure class="meal-photo">
+                            <img src="resources/image/5.jpg" alt="Paleo beef steak with vegetables">
+                    </figure>
+                </li>    
+                <li>
+                    <figure class="meal-photo">
+                            <img src="resources/image/6.jpg" alt="Healthy baguette with egg and vegetables">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                            <img src="resources/image/7.jpg" alt="Burger with cheddar and bacon">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                            <img src="resources/image/8.jpg" alt="Granola with cherries and strawberries">
+                    </figure>
+
+                </li>
+
+            </ul>
+            <ul class="meal-showcase clearfix">
+                <li>
+                    <figure class="meal-photo">
+                        <img src="resources/image/1.jpg" alt="Korean bibimbap with egg and vegetables">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="resources/image/2.jpg" alt="Simple italian pizza with cherry tomatoes">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="resources/image/3.jpg" alt="Chicken breast steak with vegetables">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="resources/image/4.jpg" alt="Autumn pumpkin soup">
+                    </figure>
+                </li>
+            </ul>
+    </section>
+
+   <!--  How it works section -->
+
+    <section class="section-steps" id="works">
+            <div class="row">
+                <h2>How it works &mdash; Simple as 1, 2, 3</h2>
+            </div>
+            <div class="row">
+                <div class="span-1-of-2 steps-box">
+                    <img src="resources/image/app-iPhone.png" alt="Omnifood app on iPhone" class="app-screen js--wp-2">
+                </div>
+                <div class="span-1-of-2 steps-box">
+                    <div class="works-step">
+                        <div>1</div>
+                        <p>Choose the subscription plan that best fits your needs and sign up today.</p>
+                    </div>
+                    <div class="works-step">
+                        <div>2</div>
+                        <p>Order your delicious meal using our mobile app or website. Or you can even call us!</p>
+                    </div>
+                    <div class="works-step">
+                        <div>3</div>
+                        <p>Enjoy your meal after less than 20 minutes. See you the next time!</p>
+                    </div>
+                    
+                    <a href="#" class="btn-app"><img src="resources/image/download-app.svg" alt="App Store Button"></a>
+                    <a href="#" class="btn-app"><img src="resources/image/download-app-android.png" alt="Play Store Button"></a>
+                </div>
+            </div>
+        </section>
+
+<!-- <section cities strt here>     --> 
+
+        <section class="section-cities" id="cities">
+            <div class="row">
+                <h2>We're currently in these cities</h2> <!-- this is the title -->
+            </div>
+            <div class="row js--wp-3">
+                <div class="col box"><!-- this class is used b4 as well in section 1 -->
+                    <!-- As we need 4 images in columns and text wriiten below each  1 of them we use this col box -->
+                    <img src="resources/image/lisbon-3.jpg" alt="lisbon"> <!-- to add the image -->
+                    <h3>Lisbon</h3>
+                    <div class="city-features">
+                       <i class="ion-ios-person icon-small"></i> <!-- this is to add icons -->
+                        1600+ happy eaters
+                    </div>
+
+                    <div class="city-features">
+                            <i class="ion-ios-star icon-small"></i> <!-- this is to add icons -->
+                            60+ top chefs
+                    </div>
+
+                    <div class="city-features">
+                            <i class="ion-ios-person icon-small"></i> <!-- this is to add icons -->
+                           <a href="#">@omnifood_lx</a> 
+                    </div>
+
+                </div>
+
+                <!-- for 2nd,3rd nd 4th city -->
+                <div class="col box">
+                        <img src="resources/image/san-francisco.jpg" alt="San Francisco">
+                        <h3>San Francisco</h3>
+                        <div class="city-features">
+                           <i class="ion-ios-person icon-small"></i> <!-- this is to add icons -->
+                            3700+ happy eaters
+                        </div>
+    
+                        <div class="city-features">
+                                <i class="ion-ios-star icon-small"></i> <!-- this is to add icons -->
+                                160+ top chefs
+                        </div>
+    
+                        <div class="city-features">
+                                <i class="ion-ios-person icon-small"></i> <!-- this is to add icons -->
+                                <a href="#">@omnifood_sf</a>
+                        </div>
+    
+                    </div>
+
+                    <div class="col box">
+                            <img src="resources/image/berlin.jpg" alt="Berlin">
+                            <h3>Berlin</h3>
+                            <div class="city-features">
+                               <i class="ion-ios-person icon-small"></i> <!-- this is to add icons -->
+                                2300+ happy eaters
+                            </div>
+        
+                            <div class="city-features">
+                                    <i class="ion-ios-star icon-small"></i> <!-- this is to add icons -->
+                                    110+ top chefs
+                            </div>
+        
+                            <div class="city-features">
+                                    <i class="ion-ios-person icon-small"></i> <!-- this is to add icons -->
+                                    <a href="#">@omnifood_berlin</a>
+                            </div>
+        
+                    </div> 
+                    
+                    <div class="col box">
+                            <img src="resources/image/london.jpg" alt="London">
+                            <h3>London</h3>
+                            <div class="city-features">
+                               <i class="ion-ios-person icon-small"></i> <!-- this is to add icons -->
+                               1200+ happy eaters
+                            </div>
+        
+                            <div class="city-features">
+                                    <i class="ion-ios-star icon-small"></i> <!-- this is to add icons -->
+                                    50+ top chefs
+                            </div>
+        
+                            <div class="city-features">
+                                    <i class="ion-ios-person icon-small"></i> <!-- this is to add icons -->
+                                    <a href="#">@omnifood_london</a>
+                            </div>
+        
+                    </div>
+
+            </div>
+
+        </section>
+<!-- testimonials -->
+        <section class="section-testimonials">
+            <div class="row">
+                <h2>Our customers can't live without us</h2>
+            </div>
+
+            <div class="row">
+                <div class="span-1-of-3">
+                    <blockquote> <!-- this is for placing quotes -->
+                        Omnifood is just awesome! I just launched a startup which leaves me with no time for cooking, so Omnifood is a life-saver. Now that I got used to it, I couldn't live without my daily meals!
+                       <cite><img src="resources/image/customer-1.jpg" alt="customer-1">Alberto Duncan</cite> <!-- the author name and image goes here -->
+                    </blockquote>
+
+                </div>
+
+                <div class="span-1-of-3">
+                        <blockquote> <!-- this is for placing quotes -->
+                            Inexpensive, healthy and great-tasting meals, delivered right to my home. We have lots of food delivery here in Lisbon, but no one comes even close to Omifood. Me and my family are so in love!
+                           <cite><img src="resources/image/customer-2.jpg" alt="customer-2">Joana Silva</cite> <!-- the author name and image goes here -->
+                        </blockquote>
+    
+                </div>
+
+                <div class="span-1-of-3">
+                        <blockquote> <!-- this is for placing quotes -->
+                            I was looking for a quick and easy food delivery service in San Franciso. I tried a lot of them and ended up with Omnifood. Best food delivery service in the Bay Area. Keep up the great work!
+                           <cite><img src="resources/image/customer-3.jpg" alt="customer-3">Milton Chapman</cite> <!-- the author name and image goes here -->
+                        </blockquote>
+    
+                </div>
+
+            </div>
+        </section>
+
+
+<!-- plan section starts here   -->    
+        <section class="section-plans js--section-plans" id="plans"><!-- this id works as an anchor and on clicking plans in nav it takes us to this section -->
+           <div class="row">
+               <h2>Start eating healthy today</h2>
+           </div>
+           
+           <div class="row">
+               <div class=span-1-of-3><!-- each of the pricing plan will have 3 sections -->
+                   <div class="plan-box js--wp-4">
+                       <div>
+                           <h3>Premium</h3>
+                           <p class="plan-price">399$ <span>/ month</span></p>
+                           <!-- span only is used to style something differently --> 
+                           <p class="plan-price-meal">That's only 13.30$ per meal</p>
+                       </div>
+
+                       <div>
+                           <ul>
+                               <li><i class=ion-ios-checkmark-empty icon-small></i>
+                                1 meal every day</li>
+
+                                <li><i class=ion-ios-checkmark-empty icon-small></i>
+                                    Order 24/7</li>
+                                
+                                <li><i class=ion-ios-checkmark-empty icon-small></i>
+                                        Access to newest creations </li> 
+
+                                <li><i class=ion-ios-checkmark-empty icon-small></i>
+                                    Free delivery</li>         
+                                    
+                           </ul>   
+                       </div>
+
+                       <div> <!-- this 1 is for button -->
+                        <a href="#" class="btn btn-full">Sign Up Now</a>   
+                       </div>
+
+                   </div>
+               </div>
+
+               <div class=span-1-of-3><!-- each of the pricing plan will have 3 sections -->
+                <div class="plan-box">
+                    <div>
+                        <h3>Pro</h3>
+                        <p class="plan-price">149$ <span>/month</span></p>
+                        <p class="plan-price-meal">That’s only 14.90$ per meal</p>
+                    </div>
+
+                    <div>
+                        <ul>
+                            <li><i class=ion-ios-checkmark-empty icon-small></i>
+                                1 meal 10 days/month    </li>
+
+                             <li><i class=ion-ios-checkmark-empty icon-small></i>
+                                 Order 24/7</li>
+                             
+                             <li><i class=ion-ios-checkmark-empty icon-small></i>
+                                     Access to newest creations </li> 
+
+                             <li><i class=ion-ios-checkmark-empty icon-small></i>
+                                 Free delivery</li>         
+                                 
+                        </ul>   
+                    </div>
+
+                    <div> <!-- this 1 is for button -->
+                     <a href="#" class="btn btn-ghost">Sign Up Now</a>   
+                    </div>
+
+                </div>
+            </div>
+
+            <div class=span-1-of-3><!-- each of the pricing plan will have 3 sections -->
+                <div class="plan-box">
+                    <div>
+                        <h3>Starter</h3>
+                        <p class="plan-price">19$ <span>/month</span></p>
+                        <p class="plan-price-meal">&nbsp</p> <!-- use nbsp for space -->
+                    </div>
+
+                    <div>
+                        <ul>
+                            <li><i class=ion-ios-checkmark-empty icon-small></i>
+                             1 meal</li>
+
+                             <li><i class=ion-ios-checkmark-empty icon-small></i>
+                                Order from 8 am to 12 pm</li>
+                             
+                             <li><i class=ion-ios-close-empty icon-small></i>
+                                     Access to newest creations </li> 
+
+                             <li><i class=ion-ios-checkmark-empty icon-small></i>
+                                 Free delivery</li>         
+                                 
+                        </ul>   
+                    </div>
+
+                    <div> <!-- this 1 is for button -->
+                     <a href="#" class="btn btn-ghost">Sign Up Now</a>   
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        </section> 
+        
+<!-- Form starts here  -->   
+        <section class="section-form">
+            <div class="row">
+                <h2>We are happy to hear from you</h2>
+            </div>
+
+            <div class="row">
+                    <form method="post" action="#" class="contact-form"> <!-- this method is used when we r sending or getting something
+                        from the browser like making a call -->
+                        <div class="row">
+                            <div class="col span-1-of-3"><!-- this span occupies 33% space -->
+                                <label for="name">Name</label>
+                            </div>
+                            <div class="col span-2-of-3"><!-- thi occupies twice as much space as the other span -->
+                                <input type="text" name="name" id="name" placeholder="Your name" required>
+                                <!-- to link the label with the input we use id, so whenever we click on name the text area gets selected -->
+                                <!-- this doesnt work with checkbox or text-area -->
+                            </div>
+                        </div>  
+                    
+                    <div class="row">
+                            <div class="col span-1-of-3">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="col span-2-of-3">
+                                <input type="email" name="email" id="email" placeholder="Your email" required>
+                            </div>
+                    </div>
+                    <div class="row"> <!-- this is for the drop-down -->
+                        <div class="col span-1-of-3">
+                                <label for="find-us">How did you find us?</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                                <select name="find-us" id="find-us">
+                                    <option value="friends" selected>Friends</option>
+                                    <option value="search">Search engine</option>
+                                    <option value="ad">Advertisement</option>
+                                    <option value="other">Other</option>
+                                </select>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col span-1-of-3">
+                                <label>Newsletter?</label>
+                            </div>
+                            <div class="col span-2-of-3">
+                                <input type="checkbox" name="news" id="news" checked> Yes, please
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col span-1-of-3">
+                                <label>Drop us a line</label>
+                            </div>
+                            <div class="col span-2-of-3">
+                                <textarea name="message" placeholder="Your message"></textarea>
+                            </div>
+                        </div>
+                        <div class="row"> <!-- this is for the button -->
+                            <div class="col span-1-of-3">
+                                <label>&nbsp;</label>
+                            </div>
+                            <div class="col span-2-of-3">
+                                <input type="submit" value="Send it!"> <!-- value is the place where we write the text we want to c in webpage -->
+                            </div>
+                        </div>    
+                </form>
+            </div>
+               
+        </section> 
+        
+        
+ <!-- footer starts here        -->
+        <footer>
+            <div class="row">
+                <div class="span-1-of-2">
+                    <ul class="footer-nav">
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">ios App</a></li>
+                        <li><a href="#">Android App</a></li>
+                    </ul>
+                </div>
+
+                <div class="span-1-of-2">
+                    <ul class="social-links">
+                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                        <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                        <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                    </ul> 
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Copyright &copy; 2019 by Omnifood. All rights reserved.
+                </p>
+            </div>  
+
+        </footer>
+    <!-- perfect place to put scripts is here b4 closure of body-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><!-- jquery library -->
+    <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+    <script src="vendors/javascript/jquery.waypoints.min.js"></script>
+    <script src="resources/javascript/scripts.js"></script>
+        
+    </body>
+</html>
