@@ -1,0 +1,625 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clearfix {
+  zoom: 1;
+} /* when ever float is used we need to use this to avoid overlapping between 2 diff sections */
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+html {
+  background-color: azure;
+  color: #555;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility; /* this text rendering makes our fonts rendering in a perfect way */
+}
+
+.row {
+  /* This is done as resizing is done in terms of rows and in grid.css resizing of rows is done  */
+  max-width: 1140px;
+  margin: 0 auto 0 auto; /* top right bottom left  */
+  /* margin:0 auto;
+ Another way top bottom is zero nd right left is auto. this is a shorthand */
+}
+
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(images/hero.jpg);
+  /* this linear gradient is used to add another image on the background image. in our case its transparent black */
+  /* but without height=100vh this image occupies a little area and not widespread in whole of screen so we use this below */
+  background-size: cover; /* this to tell the browser to zoom out the image which is coming as zoomed */
+  background-position: center; /* To center the image */
+  height: 100vh; /* this is to get the background image occupy full 100% of screen */
+}
+
+.hero-text-box {
+  position: absolute;
+  width: 1140px;
+  top: 50%; /* To shift the text box */
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* this decreases left spacing by 50% and top by 50% */
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 200%;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 180%;
+  word-spacing: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+h2:after {
+  /* this after is done to add something directly to css */
+  /* A margin is added using this */
+  display: block;
+  height: 2px;
+  background-color: orange;
+  content: " "; /* content is left as black so that no words should come */
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 110%;
+  margin-bottom: 15px;
+}
+
+.long-copy {
+  /* this is for the para */
+  line-height: 145%;
+  width: 70%; /* this is done to decrease the size of line but then the para is no longer centred so we use margin left
+    as 15% so 15 is given to both sides right n left 15*2=30 + 70%=100% , so instead of using centre tag we can do this*/
+  margin-left: 15%;
+}
+
+/* A button has 4 states 
+link, visited, hover,active */
+.btn:link,
+.btn:visited,
+input[type=submit]/* this button comes later and as we want features as these buttons so we r pasting here */
+ {
+  /* shows how a button looks like after it has been visited */
+
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 200px; /* to make button shape as round */
+  /* to remove the underline from I'm hungry and show me more text we use text decoration as none */
+}
+
+.btn-full:link,
+.btn-full:visited {
+  background-color: #e4c4a9;
+  border: 1px solid #b351d1;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+  /* this transition is used while toggling from 1 thing to another there is a change in color
+    in abover background color border and color change after 0.2 s after removing the cursor from button */
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+  border: 1px solid #8b857f;
+  columns: #222222; /* this is the color of the text written inside */
+  margin-right: 15px;
+}
+
+.btn:hover,
+.btn:active
+input[type=submit]:hover,
+input[type=submit]:active/* this button comes later and as we want features as these buttons so we r pasting here */
+ {
+  background-color: #e67e22;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  float: left;
+  margin-top: 20px;
+}
+
+.logo-black {
+  display: none;
+  height: 50px;
+  width: auto;
+  float: left;
+  margin: 5px 0;
+}
+
+/* this is the main-nav */
+.main-nav {
+  float: right; /* to shift the unordered list */
+  list-style: none; /* This is done to remove bullets from the unordered list */
+  margin-top: 60px;
+}
+
+.main-nav li {
+  /* to select all li elements */
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+  /* to select all the a  textelements inside */
+  color: #fff;
+  padding: 8px 0px;
+  text-decoration: none; /* To get rid of the underline from text */
+  text-transform: uppercase;
+  font-size: 90%;
+  border-bottom: 2px solid transparent; /* we have wriiten transparent to make border transparent when its not visited */
+  transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+  /* To give the headings border and hover effect we use this */
+  border-bottom: 2px solid orange;
+}
+
+/* this is the sticky-nav 
+This is done so that the main nav bar should always appear at top while scrolling down and dissapear when in header*/
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 2px #efefef;
+  z-index: 9999; /* this z-index ensures that our sticky index is always at top of other elements so that it doesnt become opaque due to other elements */
+}
+
+.sticky .main-nav {
+  margin-top: 18px;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+  padding: 16px 0;
+  color: #555;
+}
+
+.sticky .logo {
+  display: none;
+}
+.sticky .logo-black {
+  display: block;
+}
+
+.col {
+  display: inline-block; /* for arrangining columns in inline */
+  width: 23.3%;
+  padding: 8px 10px;
+}
+
+#abc {
+  /* this is used as after inline alignment was not proper from top
+    some columns were having more padding from top so it was like a rocky hill  */
+  display: flex; /* this flex is a really helpful tag for removing misallignment */
+  padding-left: 30px;
+}
+
+section {
+  /* section is a tag so no need to put . */
+  /* this is for providing whitespace*/
+  padding: 80px 0;
+}
+
+.box p {
+  font-size: 90%;
+  line-height: 145%; /* this increases the distance between the lines */
+}
+
+.icon-big {
+  font-size: 300%;
+  display: block; /* this block is used to break the line in case its too big */
+  color: orange;
+  margin-bottom: 10px;
+}
+
+/* Meals */
+
+.section-meals {
+  padding: 0; /* to remove the white spacing between section 2 and 3 */
+}
+
+.meal-showcase {
+  list-style: none; /* to remove bullet points */
+  width: 100%; /* to occupy full screen space */
+}
+
+.meal-showcase li {
+  display: block; /* to break line once width finishes */
+  float: left;
+  width: 25%; /* as i want 4 images in 1 row thats y 25% is used as 25*4=100 which is our width */
+}
+
+.meal-photo {
+  width: 100%; /* this is actually redundant  */
+  margin: 0; /* to remove any spacing btween images */
+  overflow: hidden; /* on using the scale the images become bigger than the actual width of window, so to hide the extra part which is not a part of window we use this */
+  background-color: black; /* this is done so that after opacity is applied img becomes darker */
+}
+
+.meal-photo img {
+  opacity: 0.7; /* this is 70% */
+  width: 100%;
+  height: auto;
+  transform: scale(1.15); /* The image increases by 15% */
+  /* for adding animation and to make the image zoom out when hovered */
+  transition: transform 0.5s opacity 0.5s; /* this is the time lag,It takes .5s to transform to 100% from 115% */
+}
+
+.meal-photo img:hover {
+  /* reduces the size back to 100 */
+  transform: scale(1); /* to add the animation after we hover */
+  opacity: 1; /* to change back the opacity to 100% */
+}
+
+/* how it works section */
+.section-steps {
+  background-color: #f4f4f4;
+}
+
+.span-1-of-2 {
+  width: 49%;
+  display: inline-block;
+}
+
+.steps-box {
+  margin-top: 30px;
+}
+
+.steps-box:first-child {
+  /* to make changes only to iphone app  */
+  text-align: right;
+  padding-right: 3%;
+}
+
+.steps-box:last-child {
+  /* to make changes to only steps */
+  text-align: left;
+  padding-left: 3%;
+  margin-top: 70px;
+}
+
+.app-screen {
+  width: 40%;
+}
+
+.works-step {
+  margin-bottom: 50px;
+}
+
+.works-step:last-of-type {
+  margin-bottom: 80px;
+}
+
+.works-step div {
+  color: #e67e22;
+  font-size: 150%;
+  height: 54px;
+  width: 54px;
+  border: 2px solid #e67e22;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  margin-right: 25px;
+  float: left;
+  padding: 5px;
+}
+
+.btn-app:link,
+.btn-app:visited {
+  border: 0;
+}
+
+.btn-app img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+/* Cities */
+
+.box img {
+  width: 100%; /*  so that the img can be exactly as wide as box */
+  height: auto; /* sets automatically acc to width */
+  margin-bottom: 15px;
+}
+.city-features {
+  /* for spacing btween lines */
+  margin-bottom: 5px;
+}
+
+.icon-small {
+  /* to align the icons and to add some other efects */
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  color: #e67e22;
+
+  /* to align  the icon and text we did below steps */
+  margin-top: -4px; /* negative margin is used here it decreases the margin by 4% */
+  font-size: 120%;
+  line-height: 120%;
+  vertical-align: middle;
+}
+
+a:link,
+a:visited {
+  /* to add styling to links */
+  color: #e67e22;
+  text-decoration: none;
+  border-bottom: 1px solid #e67e22;
+  padding-bottom: 2px;
+  transition: border-bottom 0.2s color 0.2s;
+}
+
+a:hover,
+a:active {
+  color: #555;
+  border: transparent; /* to dissapear the border */
+}
+
+/* Testimonials */
+.span-1-of-3 {
+  width: 32.26%;
+  display: inline-block;
+}
+
+.section-testimonials {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(images/back-customers.jpg);
+  /* this linear-gradient is for putting another image on a image in this case a black film
+    this url adds the image directly from css folder without adding the image in html  */
+  background-size: cover; /* to cover full browser window */
+  color: #fff; /* to make the text white */
+  background-attachment: fixed; /* to keep the image fixed */
+}
+
+blockquote {
+  padding: 2%;
+  font-style: italic;
+  line-height: 140%;
+  /* to remove the rocky hill */
+  /* as child is set absolute */
+}
+
+blockquote:before {
+  /* to add the quotation mark b4 text using pseudo class before*/
+  content: "\201C"; /* this is from some other site to add the quotation mark */
+  font-size: 400%;
+  /* whenever we use absolute in child its parent shd be set to relative */
+}
+
+cite {
+  font-size: 90%;
+  margin-top: 25px;
+  display: block; /* to break the line */
+}
+
+cite img {
+  height: 45px;
+  border-radius: 50%; /* to make image round */
+  margin-right: 10px;
+  vertical-align: middle; /* this is added to align the image and text, showing the text aligned in between the image */
+}
+
+/* section-plans starts here */
+
+.section-plans {
+  background-color: #82f; /* this is the color of the section */
+}
+
+.plan-box {
+  background-color: #fff;
+  border-radius: 5px; /* to give rounded corner */
+  width: 90%;
+  margin-left: 5%;
+  box-shadow: 0 2px 2px #efefef;
+}
+
+.plan-box div {
+  padding: 15px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.plan-box div:first-child {
+  background-color: #fcfcfc;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.plan-box div:last-child {
+  /*  button is the last child, to center the button */
+  text-align: center;
+  border: 0;
+}
+
+.plan-price {
+  font-size: 300%;
+  margin-bottom: 10px;
+  font-weight: 100;
+  color: #e67e22;
+}
+
+.plan-price span {
+  /* to style / meal */
+  font-size: 30%; /* means 30% of parent i.e.30% of 300 */
+  font-weight: 300; /* to be equal to parent */
+}
+
+plan-price-meal {
+  font-size: 80%;
+}
+
+.plan-box ul {
+  list-style: none; /* to remove the bullets */
+}
+
+.plan-box ul li {
+  padding: 5px 0;
+}
+
+/* Login form starts here */
+
+.span-2-of-3 {
+  width: 66.13%;
+}
+
+.contact-form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+input[type=text],/* this is done only to select those where we want changes, here we have selected text and email only of input type */
+input[type=email],
+select,
+textatrea {
+  width: 100%;
+  padding: 7px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  height: 100px;
+}
+input[type="checkbox"] {
+  margin: 30px 5px 10px 0px;
+}
+
+input[type="submit"] {
+  background-color: rgb(231, 19, 19);
+}
+
+/* footer starts here */
+footer {
+  background-color: #333;
+  padding: 50px;
+  font-size: 80%;
+}
+
+.footer-nav {
+  list-style: none;
+  float: left;
+}
+
+.social-links {
+  list-style: none;
+  float: right;
+}
+
+.footer-nav li,
+.social-links li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child {
+  margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+  text-decoration: none;
+  border: 0;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+  color: #ddd;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+  font-size: 160%;
+}
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram {
+  transition: color 0.2s;
+}
+
+.ion-social-facebook:hover {
+  color: #3b5998;
+}
+
+.ion-social-twitter:hover {
+  color: #00aced;
+}
+
+.ion-social-googleplus:hover {
+  color: #dd4b39;
+}
+
+.ion-social-instagram:hover {
+  color: #517fa4;
+}
+
+footer p {
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Animation starts here */
+/* .js--wp-1,
+.js--wp-2,
+.js--wp-3
+{
+    opacity: 0; /* to keep the elements invisible */
+/*-webkit-animation-duration: 1s;
+    animation-duration: 1s;
+} */
+
+/* .js--wp-4 {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.js--wp-1.animated,
+.js--wp-2.animated,
+.js--wp-3.animated {
+    opacity: 1;}
+     /* so tht the element opacity returns to 1 */
