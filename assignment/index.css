@@ -1,0 +1,236 @@
+body {
+  font-family: sans-serif;
+}
+
+.header {
+  background-image: url(https://cdn.pixabay.com/photo/2014/05/02/21/50/home-office-336378_960_720.jpg);
+  width: 100%;
+  height: 550px;
+}
+
+.header-content {
+  height: 550px;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.header-content > span {
+  position: absolute;
+  color: white;
+  bottom: 30px;
+  font-size: 60px;
+  left: 50px;
+}
+
+.header-content > span:last-child {
+  font-size: 100px;
+  color: white;
+  background: #ff6161;
+  right: 40px;
+  left: unset;
+  height: 140px;
+  width: 140px;
+  text-align: center;
+  line-height: 140px;
+  border-radius: 50%;
+  bottom: -68px;
+}
+
+.body {
+  margin: 40px 40px;
+}
+
+.today,
+.tomorrow {
+  padding-top: 1px;
+}
+
+.today > span,
+.tomorrow > span {
+  font-size: 35px;
+  color: #808080c7;
+  display: inline-block;
+  padding-bottom: 30px;
+}
+
+.row1 {
+  margin-left: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 60px;
+  padding-top: 20px;
+}
+/* .row1 > hr {
+  margin-bottom: 40px;
+  margin-top: -20px;
+} */
+
+.row1 > div:first-child > i {
+  font-size: 100px;
+  color: #030371b8;
+  background-color: #8011b1ad;
+  border-radius: 15px;
+}
+
+.row1 > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-right: 40px;
+}
+
+.row1 > div:nth-child(2) > span {
+  font-size: 40px;
+}
+
+.row1 > div:nth-child(2) > span:first-child {
+  color: #030371b8;
+  font-weight: bold;
+}
+
+.row1 > div:nth-child(2) > span:last-child {
+  color: gray;
+}
+
+.row1 > div:last-child {
+  display: flex;
+  align-items: center;
+}
+
+.row1 > div:last-child > i {
+  font-size: 50px;
+  color: goldenrod;
+}
+.row2 {
+  margin-left: 100px;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 50px;
+  padding-top: 20px;
+}
+/* .row2 > hr {
+  margin-top: -30px;
+  margin-bottom: 20px;
+} */
+
+.row2 > div:first-child > i {
+  font-size: 80px;
+  color: coral;
+  border-radius: 15px;
+}
+.row2 > div:nth-child(2) > span:first-child {
+  color: #030371b8;
+  font-weight: bold;
+  font-size: 40px;
+  padding-right: 50px;
+}
+.row2 > div:last-child {
+  display: flex;
+  align-items: center;
+}
+
+.row2 > div:last-child > i {
+  font-size: 50px;
+  color: rgb(172, 169, 164);
+}
+/* row 3 */
+.row3 {
+  margin-left: 100px;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 50px;
+}
+/* .row3 > hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+} */
+
+.row3 > div:first-child > i {
+  font-size: 80px;
+  color: rgb(3, 3, 26);
+  border-radius: 15px;
+  background: lightgrey;
+}
+.row3 > div:nth-child(2) > span:first-child {
+  color: #030371b8;
+  font-weight: bold;
+  font-size: 40px;
+}
+.row3 > div:last-child {
+  display: flex;
+  align-items: center;
+}
+
+.row3 > div:last-child > i {
+  font-size: 50px;
+  color: rgb(172, 169, 164);
+}
+/* row4 */
+.row4 {
+  margin-left: 100px;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 60px;
+  padding-top: 20px;
+}
+/* .row4 > hr {
+  margin-top: -30px;
+} */
+
+.row4 > div:first-child > i {
+  font-size: 80px;
+  color: rgb(207, 47, 26);
+  border-radius: 15px;
+  background-color: oldlace;
+}
+.row4 > div:nth-child(2) > span:first-child {
+  color: #030371b8;
+  font-weight: bold;
+  font-size: 40px;
+}
+.row4 > div:last-child {
+  display: flex;
+  align-items: center;
+}
+
+.row4 > div:last-child > i {
+  font-size: 50px;
+  color: rgb(172, 169, 164);
+}
+.footer {
+  size: 200px;
+  display: inline-flex;
+}
+.footer > span {
+  font-size: 40px;
+  color: rgb(192, 197, 201);
+  text-decoration: line-through;
+}
+.far {
+  font-size: 40px;
+  order: 1;
+  color: rgb(192, 197, 201);
+}
+em {
+  margin-right: 210px;
+  margin-left: 120px;
+}
+/* Media Queries for desktop */
+/* @media only screen and (min-width: 961px) {
+  .row1 > div:first-child > i {
+    margin-right: 50px;
+  }
+  .row2 > div:last-child > i {
+    margin-right: 25px;
+  }
+  .row3 > div:last-child > i {
+    margin-right: 25px;
+  }
+  .row4 > div:last-child > i {
+    margin-right: 30px;
+  }
+  em {
+    margin-right: 380px;
+    margin-left: 160px;
+  }
+} */
